@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+
+
+<style>
+@media screen and (max-width: 1280px) {div.contentblock {width: 1200px;} } 
+@media screen and (max-width: 1140px) { div.contentblock {width: 1024px;} } 
+@media screen and (max-width: 992px) { div. contentblock {width: 970px;} } 
+
+
+</style>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Үйлену тойына шақыру!</title> 
+
+ <style>
+   
+
+
+      .form-inner {
+   position: relative;
+}
+
+
+
+
+.form-inner h3 {
+   position: relative;
+   margin-top: 0;
+   color: black;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 100;
+   font-size: 25px;
+   text-align: center;
+   
+}
+
+}
+.form-inner label {
+   display: block;
+   padding-left: 20px;
+   font-family: 'Roboto', sans-serif;
+   color: rgba(255, 255, 255, .6);
+   text-transform: uppercase;
+   font-size: 15px;
+padding: 0 15px;
+   margin: 10px 0 15px;
+}
+.form-inner input {
+   width: 70%;
+   height: 40px;
+    border: 0;
+    border-bottom: 2px solid #aaa;
+    font-size: 20px;
+    font-weight: 300;
+      background-color: #FFF2E3;
+    letter-spacing: 0.11em;
+   font-family: 'Roboto', sans-serif;
+  padding: 0 15px;
+   margin: 10px 0 15px;
+
+}
+button.btn {
+  font-weight: 600;
+  color: #382b22;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  background: #fff0f0;
+  border: 2px solid #b18597;
+  border-radius: 0.75em;
+  transition: transform 0.15s;
+  transform-style: preserve-3d;
+}
+button.btn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button.btn:hover {
+  background: #ffe9e9;
+  transform: translate(0, 0.25em);
+}
+button.btn:hover::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  transform: translate3d(0, 0.5em, -1em);
+}
+button.btn:active {
+  background: #ffe9e9;
+  transform: translate(0em, 0.75em);
+}
+button.btn:active::before {
+  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  transform: translate3d(0, 0, -1em);
+}
+
+
+.form-inner textarea {
+   width: 70%;
+   margin-top: 10px;
+    border: 0;
+    border-bottom: 2px solid #aaa;
+    font-size: 20px;
+    font-weight: 300;
+   background-color:#FFF2E3;
+    letter-spacing: 0.11em;
+ height: 40px;
+   font-family: 'Roboto', sans-serif;
+  
+}
+
+.form-inner input[type="submit"] {
+    background: linear-gradient(to top left, #FFF2E3 0%, #947346 100%);
+
+}
+
+
+    </style>
+
+
+<style>
+  body{
+    background-color:#FFFFF8  ;
+  }
+
+</style>
+</head>
+<body>
+
+
+<center>
+<div class="element-animation"> 
+<img src="jil;hg.png" style="width: 85%; margin-top: 150px;">
+
+</div></center>
+
+
+
+<center style="margin-top: 20px;">
+
+<form class="transparent"method="post" id="form">
+<div class="form-inner">
+<h3>Тойға келесізбе?</h3>
+
+<input type="text" name="name" placeholder="Ия/жоқ"   minlength="2" maxlength="20" />
+    <textarea
+          name="message"
+          maxlength="100"
+          id="message"
+          cols="30"
+          rows="4"
+          placeholder="Есіміңізді жазыңыз"
+         
+        ></textarea>
+<input class="btn" type="submit" value="Жіберу" style="color:white;">
+</div>
+</form></center>
+
+
+
+<center>
+<div class="element-animation"> 
+<img src="yuo.png" style="width: 85%; margin-top: 20px;">
+
+</div></center>
+
+
+  <script>
+
+
+     const URL_APP =     "https://script.google.com/macros/s/AKfycbwjR87mZbHW6LOFxnKWnTuWjBJ-f9NUFwtEG_u_A6s4vCjXR34gIL_KrF1HyBFyqPD1/exec";
+
+      
+      const form = document.querySelector("#form");
+
+  
+      form.action = URL_APP;
+
+    
+      function isFilled(details) {
+        const { name } = details;
+        if (!name) return false;
+       
+        return true;
+      }
+
+      form.addEventListener("submit", async (ev) => {
+       
+        ev.preventDefault();
+
+        const name = document.querySelector("[name=name]");
+      
+        const message = document.querySelector("[name=message]");
+      
+        let details = {
+          name: name.value.trim(),
+      
+          message: message.value.trim(),
+      
+        };
+
+        if (!isFilled(details)) return;
+
+      
+        let formBody = [];
+        for (let property in details) {
+       
+          let encodedKey = encodeURIComponent(property);
+          let encodedValue = encodeURIComponent(details[property]);
+          formBody.push(encodedKey + "=" + encodedValue);
+        }
+     
+        formBody = formBody.join("&");
+
+   
+        const result = await fetch(URL_APP, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          cors: "no-cors",
+          body: formBody,
+        })
+          .then((res) => res.json())
+          .catch((err) => alert("Ошибка!"))
+     
+          
+         if( result.type === 'success' ) {
+            name.value = '';
+            message.value = '';
+           alert('Жауабыңызға рахмет!')
+         }
+         if( result.type === 'error' ) {            
+           alert(`Ошибка( ${result.errors}`)
+         }
+
+
+      });
+
+</script>
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https: //fonts.googleapis.com/css2?family= Piazzolla :wght@100 & display=swap" rel="stylesheet">
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
